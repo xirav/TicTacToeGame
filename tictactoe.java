@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class tictactoe {
 	public static char[] Board() {
 		char[] gameLayout = new char[10];
@@ -19,13 +21,13 @@ public class tictactoe {
 
 				if(symbol == 'X'){
 
-					Player='X';
-					Computer='O';
+				        Player = 'X';
+					Computer = 'O';
 
 				}
 				else if(symbol == 'O'){
-					Computer='X';
-					Player='O';
+					Computer = 'X';
+					Player = 'O';
 
 				}
 				else{
@@ -36,9 +38,23 @@ public class tictactoe {
 
 	}
 
+
+	public static void showBoard() {
+		System.out.println("Show Casing the board");
+		for(int i=1;i<10;i++){
+			if(i == 4 || i == 7){
+				System.out.println("|\n");
+			}
+			System.out.println("|" + gameLayout[i] + "");
+		}
+		System.out.println("|\n\n");
+	
+	}
+
 	public static void main(String args[]) {
 		Board();
 		symbolAssignment();
+		showBoard();
 	}
 
 }
